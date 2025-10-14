@@ -6,12 +6,12 @@ include(FetchContent)
 
 #enable one or more of these options
 
-#OPTION(SLAG_DEAR_IMGUI_ANDROID_BACKEND "Use Android backend for dear imgui windowing" OFF)
-#OPTION(SLAG_DEAR_IMGUI_GLFW_BACKEND "Use GLFW backend for dear imgui windowing" OFF)
-#OPTION(SLAG_DEAR_IMGUI_OSX_BACKEND "Use OSX backend for dear imgui windowing" OFF)
-#OPTION(SLAG_DEAR_IMGUI_SDL2_BACKEND "Use SDL2 backend for dear imgui windowing" OFF)
-#OPTION(SLAG_DEAR_IMGUI_SDL3_BACKEND "Use SDL3 backend for dear imgui windowing" OFF)
-#OPTION(SLAG_DEAR_IMGUI_WIN32_BACKEND "Use Win32 backend for dear imgui windowing" OFF)
+#OPTION(SLAG_DEAR_IMGUI_ANDROID_BACKEND "Use Android backend for dear imgui windowing" ON)
+#OPTION(SLAG_DEAR_IMGUI_GLFW_BACKEND "Use GLFW backend for dear imgui windowing" ON)
+#OPTION(SLAG_DEAR_IMGUI_OSX_BACKEND "Use OSX backend for dear imgui windowing" ON)
+#OPTION(SLAG_DEAR_IMGUI_SDL2_BACKEND "Use SDL2 backend for dear imgui windowing" ON)
+#OPTION(SLAG_DEAR_IMGUI_SDL3_BACKEND "Use SDL3 backend for dear imgui windowing" ON)
+#OPTION(SLAG_DEAR_IMGUI_WIN32_BACKEND "Use Win32 backend for dear imgui windowing" ON)
 
 fetchcontent_declare(
         Slag
