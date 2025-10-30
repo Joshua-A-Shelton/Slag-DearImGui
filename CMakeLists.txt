@@ -61,7 +61,7 @@ if(PROJECT_IS_TOP_LEVEL)
         fetchcontent_declare(
                 Slag
                 GIT_REPOSITORY https://github.com/Joshua-A-Shelton/Slag.git
-                GIT_TAG origin/master #testing on 0.9.8, should set directly to release when the library gets there
+                GIT_TAG origin/master
                 GIT_SHALLOW TRUE
                 OVERRIDE_FIND_PACKAGE
         )

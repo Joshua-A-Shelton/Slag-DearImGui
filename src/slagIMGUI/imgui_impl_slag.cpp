@@ -250,8 +250,13 @@ void ImGui_Slag_CreateWindow(ImGuiViewport* viewport)
             break;
         default: throw std::runtime_error("Unsupported platform");
     }
-
-    auto viewportData = new ImGui_ImplSlag_ViewportData(slag::SwapChain::newSwapChain(platformData,viewport->Size.x,viewport->Size.y,slag::SwapChain::PresentMode::BUFFER,3,slagData->backBufferFormat,slag::SwapChain::AlphaCompositing::IGNORE_ALPHA,ImGui_Slag_CreateFrameResources),false);
+    slag::SwapChainDetails swapChainDetails;
+    swapChainDetails.presentMode = slag::SwapChain::PresentMode::BUFFER;
+    swapChainDetails.frameCount = 3;
+    swapChainDetails.backBufferFormat = slagData->backBufferFormat;
+    swapChainDetails.alphaCompositing = slag::SwapChain::AlphaCompositing::IGNORE_ALPHA;
+    swapChainDetails.createResourceFunction = ImGui_Slag_CreateFrameResources;
+    auto viewportData = new ImGui_ImplSlag_ViewportData(slag::SwapChain::newSwapChain(platformData,viewport->Size.x,viewport->Size.y,swapChainDetails),false);
     auto frame = viewportData->swapchain->next();
     viewport->RendererUserData = viewportData;
 }

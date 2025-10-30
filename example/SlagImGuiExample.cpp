@@ -111,7 +111,9 @@ int main()
     SDL_ShowWindow(window);
 
     auto backBufferFormat = slag::Pixels::Format::B8G8R8A8_UNORM;
-    auto swapchain = slag::SwapChain::newSwapChain(pd,w,h,slag::SwapChain::PresentMode::BUFFER,2,backBufferFormat,slag::SwapChain::AlphaCompositing::IGNORE_ALPHA,generateResources);
+    slag::SwapChainDetails swapChainDetails;
+    swapChainDetails.createResourceFunction = generateResources;
+    auto swapchain = slag::SwapChain::newSwapChain(pd,w,h,swapChainDetails);
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
 
